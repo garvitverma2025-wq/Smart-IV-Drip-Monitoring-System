@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+  <title id="title">Smart IV Drip Monitoring System block diagram</title>
+  <desc id="desc">IR drop sensor and HC-SR04 fluid-level sensor feed an AT89S52 microcontroller, which updates a 16 by 2 LCD.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="600" fill="#ffffff"/>
+  <text x="550" y="55" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#0f172a" text-anchor="middle">Smart IV Drip Monitoring System</text>
+  <text x="550" y="88" font-family="Arial, sans-serif" font-size="17" fill="#475569" text-anchor="middle">Educational prototype — sensor inputs, embedded processing and LCD output</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="170" width="250" height="115" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <text x="195" y="212" font-size="23" font-weight="bold" fill="#1e3a8a" text-anchor="middle">IR Drop Sensor</text>
+    <text x="195" y="245" font-size="17" fill="#1e40af" text-anchor="middle">Drop event detection</text>
+    <text x="195" y="269" font-size="15" fill="#1e40af" text-anchor="middle">OUT → P2.0</text>
+
+    <rect x="70" y="350" width="250" height="115" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="3"/>
+    <text x="195" y="392" font-size="23" font-weight="bold" fill="#14532d" text-anchor="middle">HC-SR04</text>
+    <text x="195" y="425" font-size="17" fill="#166534" text-anchor="middle">Fluid surface distance</text>
+    <text x="195" y="449" font-size="15" fill="#166534" text-anchor="middle">TRIG → P3.6 · ECHO → P3.7</text>
+
+    <rect x="420" y="235" width="275" height="165" rx="16" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+    <text x="557" y="282" font-size="25" font-weight="bold" fill="#0f172a" text-anchor="middle">AT89S52</text>
+    <text x="557" y="316" font-size="18" fill="#334155" text-anchor="middle">Embedded C processing</text>
+    <text x="557" y="347" font-size="16" fill="#475569" text-anchor="middle">Drop counting</text>
+    <text x="557" y="373" font-size="16" fill="#475569" text-anchor="middle">Distance-to-level estimate</text>
+
+    <rect x="790" y="235" width="240" height="165" rx="16" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+    <text x="910" y="282" font-size="24" font-weight="bold" fill="#7c2d12" text-anchor="middle">16×2 LCD</text>
+    <text x="910" y="316" font-size="18" fill="#9a3412" text-anchor="middle">Display output</text>
+    <text x="910" y="347" font-size="16" fill="#9a3412" text-anchor="middle">Drip rate</text>
+    <text x="910" y="373" font-size="16" fill="#9a3412" text-anchor="middle">Estimated fluid level</text>
+
+    <path d="M320 227 L420 286" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M320 407 L420 350" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M695 317 L790 317" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <text x="550" y="510" font-size="16" fill="#64748b" text-anchor="middle">All modules use a common ground and a regulated supply suitable for the hardware.</text>
+    <text x="550" y="545" font-size="14" fill="#64748b" text-anchor="middle">Conceptual block diagram; refer to pin-connections.md for the prototype wiring.</text>
+  </g>
+</svg>
