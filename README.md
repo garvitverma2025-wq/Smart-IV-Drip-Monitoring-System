@@ -14,6 +14,12 @@ The prototype monitors IV fluid level and drip activity using an AT89S52 microco
 - 16×2 LCD
 - Breadboard, jumper wires and regulated 5 V supply
 
+## Repository Contents
+
+- [AT89S52 firmware](firmware/main.c)
+- [Hardware pin connections](hardware/pin-connections.md)
+- [System block diagram](hardware/system-block-diagram.svg)
+
 ## Pin Connections
 
 | Module | AT89S52 pin |
@@ -26,7 +32,7 @@ The prototype monitors IV fluid level and drip activity using an AT89S52 microco
 | HC-SR04 ECHO | P3.7 |
 | LCD RW | GND |
 
-All modules share a common ground.
+All modules share a common ground. See [hardware/pin-connections.md](hardware/pin-connections.md) for the complete wiring table.
 
 ## Working Principle
 
@@ -41,22 +47,18 @@ All modules share a common ground.
 - PROGISP for programming the AT89S52
 - Embedded C
 
-## Repository Structure
+## Programming Workflow
 
-```text
-Smart-IV-Drip-Monitoring-System/
-├── README.md
-├── firmware/
-│   └── (add the verified Keil C source file here)
-├── hardware/
-│   └── (add circuit diagram and prototype photographs here)
-└── docs/
-    └── (add the project report PDF here)
-```
+1. Open the project source in Keil µVision with the C51 toolchain.
+2. Build the firmware and generate the HEX file.
+3. Select the AT89S52 in PROGISP, load the HEX file, and program the microcontroller.
+4. Verify the programming result and test the prototype with water under controlled conditions.
 
 ## Current Scope and Limitations
 
 This is a classroom prototype for demonstration with water. It displays sensor-derived estimates of fluid level and drip activity. It is not a medical device, has not been clinically validated, and must not be connected to or used to control an infusion for a patient.
+
+The timing calculations and ultrasonic distance conversion in the example firmware are approximate and depend on the board oscillator, compiler settings, sensor behaviour and physical setup. Calibrate the sensor against the actual container geometry before interpreting the displayed percentage.
 
 Potential future work includes improved calibration, abnormal-rate detection, low-fluid alerts and more robust fault handling. These are proposed extensions, not claims about features already implemented.
 
